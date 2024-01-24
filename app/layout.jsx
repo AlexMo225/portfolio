@@ -1,6 +1,9 @@
 import { Inter } from 'next/font/google'
 import './globals.css'
 import Provider from '@/components/provider'
+import Image from "next/image";
+import Link from "next/link";
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -12,8 +15,28 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="fr-FR">
-      <body className={inter.className}>
+      <body className={inter.className} p-5>
+        <div className="min-h-screen grid grid-rows-[auto, 1fr]">
+      <header className="sticky top-0 bg-white text-black p-5">
+        <div className="container mx-auto py-4 flex justify-between items-center">
+          <div className="logo">
+            <Image className="avatar" src="/img/Group30.png" width={200} height={200} alt="Alex Morel"/>
+          </div>
+          <nav className="nav">
+            <ul class="flex space-x-4">
+              <li><a href="#projet" className="hover:text-green-500">Projets</a></li>
+              <li><a href="#Compétences" className="hover:text-green-500">Compétences</a></li>
+              <li><a href="#Expériences" className="hover:text-green-500">Expériences</a></li>
+              <li><a href="#Diplomes" className="hover:text-green-500">Diplomes</a></li>
+            </ul>
+          </nav>
+          <div className="cta">
+            <Link href="assets/CV_2023-10-16_Alex Morel_SAHIE (1).pdf" target="_blank" className="btn btn-outline-light">Voir Cv</Link>
+          </div>
+        </div>
+      </header>
       <Provider>{children}</Provider>
+      </div>
       </body>
     </html>
   )
