@@ -9,7 +9,7 @@ export default function Home() {
             <div className="content max-w-md">
               <p className="text-xs text-gray-500 mb-2">- JE ME NOMME</p>
               <h1 className="text-4xl font-bold mb-4 text-black">Alex Morel<span className="text-green-500"> SAHIE.</span></h1>
-              <p className="text-gray-600">Je suis étudiant en développement web Full Stack. Étudiant enthousiaste, je suis actuellement plongé dans le monde fascinant de l'informatique à Webstart Paris. Mon parcours académique est une aventure stimulante où je découvre et apprends constamment de nouvelles technologies.</p>
+              <p className="text-gray-600">Je suis étudiant en développement web Full Stack. Étudiant enthousiaste, je suis actuellement plongé dans le monde fascinant de l informatique à Webstart Paris. Mon parcours académique est une aventure stimulante où je découvre et apprends constamment de nouvelles technologies.</p>
               <ul className="social-icons mt-4">
                 <li><Link href="#" className=" text-black"><i className="fab fa-github"></i></Link></li>
                 <li><Link href="#" className=" text-black"><i className="fab fa-linkedin"></i></Link></li>
