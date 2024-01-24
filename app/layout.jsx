@@ -31,7 +31,7 @@ export default function RootLayout({ children }) {
             </ul>
           </nav>
           <div className="cta">
-            <Link href="assets/CV_2023-10-16_Alex Morel_SAHIE (1).pdf" target="_blank" className="btn btn-outline-light">Voir Cv</Link>
+            <Link href="assets/CV_2023-10-16_Alex Morel_SAHIE (1).pdf" target="_blank"  className=" btn btn-outline-light ">Voir Cv</Link>
           </div>
         </div>
       </header>
