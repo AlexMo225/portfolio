@@ -24,14 +24,14 @@ export default function RootLayout({ children }) {
           </div>
           <nav className="nav">
             <ul class="flex space-x-4">
-              <li><a href="#projet" className="hover:text-green-500">Projets</a></li>
+              <li><Link href="/portfolio" className="hover:text-green-500">Projets</Link></li>
               <li><a href="#Compétences" className="hover:text-green-500">Compétences</a></li>
               <li><a href="#Expériences" className="hover:text-green-500">Expériences</a></li>
               <li><a href="#Diplomes" className="hover:text-green-500">Diplomes</a></li>
             </ul>
           </nav>
           <div className="cta">
-            <Link href="assets/CV_2023-10-16_Alex Morel_SAHIE (1).pdf" target="_blank"  className=" btn btn-outline-light ">Voir Cv</Link>
+            <a href="assets/cv.pdf" target="_blank"  className=" btn btn-outline-light ">Voir Cv</a>
           </div>
         </div>
       </header>
