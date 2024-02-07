@@ -20,11 +20,12 @@ export default function RootLayout({ children }) {
       <header className="sticky top-0 bg-white text-black p-5">
         <div className="container mx-auto py-4 flex justify-between items-center">
           <div className="logo">
-            <Image className="avatar" src="/img/Group30.png" width={200} height={200} alt="Alex Morel"/>
+            
+            <Link href="/"> <Image className="avatar" src="/img/Group30.png" width={200} height={200} alt="Alex Morel"/></Link>
           </div>
           <nav className="nav">
             <ul class="flex space-x-4">
-              <li><Link href="/portfolio" className="hover:text-green-500">Projets</Link></li>
+              <li><Link href="/projet" className="hover:text-green-500">Projets</Link></li>
               <li><a href="#Compétences" className="hover:text-green-500">Compétences</a></li>
               <li><a href="#Expériences" className="hover:text-green-500">Expériences</a></li>
               <li><a href="#Diplomes" className="hover:text-green-500">Diplomes</a></li>
