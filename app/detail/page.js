@@ -3,9 +3,9 @@ import Link from "next/link";
 export default function detail() {
     return (
         <>
-            <div className="bg-gray-300 py-8">
+        <div className=" py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-white shadow-xl rounded-lg overflow-hidden">
+                    <div className="bg-gray-100 shadow-xl rounded-lg overflow-hidden">
                         <div className="px-6 py-4">
                             <h2 className="text-4xl font-bold text-gray-800">
                                 Allo la terre
@@ -55,8 +55,7 @@ export default function detail() {
                         </div>
                     </div>
                 </div>
-            </div>
-            ;
+            </div>;
         </>
     );
 }
