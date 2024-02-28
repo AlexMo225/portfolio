@@ -2,28 +2,41 @@ import Image from "next/image";
 import Link from "next/link";
 export default function projet() {
     return (<> 
-<div className=" flex flex-wrap justify-between">
-    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-3/12 mb-4 h-64 m-2 rounded-xl">
-        <div class="items-center justify-center flex m-2 rounded-xl">
-            <Image src="/img/terre.png" width={300} height={200} />
-        </div>
-        <p className="text-center text-black font-Jost-ExtraBold">Allo la Terre</p>
+<div className="bg-gradient-to-b from-black to-gray-800 w-full text-white md:h-screen p-20 ">
+    <Link href="/detail">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 " >
+        <p  className="shadow-md shadow-gray-400 rounded-lg">
+        <div className="rounded-md duration-200 hover:scale-105">
+            <Image src="/img/terre.png" width={250} height={150} />
+        </div>Allo la Terre</p>
+        
+        
     </div>
-    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-3/12 mb-4 h-64 m-2 rounded-xl">
-        <div class="items-center justify-center flex m-2 rounded-xl">
-            <Image src="/img/SP.png" width={300} height={200} />
-        </div>
-        <p className="text-center text-black font-Jost-ExtraBold">
-            Spice Bloom
-        </p>
+    </Link>
+    <Link href="/details">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 p-5 ">
+        <p  className="shadow-md shadow-gray-400 rounded-lg">
+        <div className="rounded-md duration-200 hover:scale-105">
+            <Image src="/img/SP.png" width={250} height={150} />
+        </div>Spice Bloom</p>
+        
+        
     </div>
-    <div class="w-full sm:w-1/2 md:w-1/2 lg:w-1/2 xl:w-3/12 mb-4 h-64 m-2 rounded-xl">
-        <div class="items-center justify-center flex m-2 rounded-xl">
-            <Image src="/img/film.png" width={300} height={200} />
-        </div>
-        <p className="text-center text-black font-Jost-ExtraBold">API Film </p>
+    </Link>
+    <Link href="/film">
+    <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 px-12 sm:px-0 p-5 ">
+        <p  className="shadow-md shadow-gray-400 rounded-lg">
+        <div className="rounded-md duration-200 hover:scale-105">
+            <Image src="/img/film.png" width={250} height={150} />
+        </div>Moovies</p>
+        
+        
     </div>
+    </Link>
+    
+    
 </div>;
+
 </>
     );
     }
