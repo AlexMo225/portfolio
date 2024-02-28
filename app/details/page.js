@@ -3,7 +3,7 @@ import Link from "next/link";
 export default function details() {
     return (
         <>
-            <div className="bg-gray-300 py-8">
+            <div className="py-8">
                 <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="bg-gray-100  shadow-xl rounded-lg overflow-hidden">
                         <div className="px-6 py-4">
@@ -11,7 +11,7 @@ export default function details() {
                                 SPICE BLOOM
                             </h2>
                             <p className="mt-2 text-sm text-gray-600">
-                                Site e-commerce pour la vente d'epices de tout genre. 
+                                Site e-commerce pour la vente d epices de tout genre. 
                             </p>
                         </div>
                         <div className="w-full">
@@ -27,7 +27,7 @@ export default function details() {
                                 Détails
                             </h3>
                             <ul className="mt-4  text-sm text-gray-600">
-                                <li>Type:Projet fin d'année </li>
+                                <li>Type:Projet fin d année </li>
                                 <li>Date: Juin 2023</li>
                                 <li>Client: Webstart</li>
                                 <li>

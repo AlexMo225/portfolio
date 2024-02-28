@@ -12,6 +12,7 @@ export default function projet() {
                                     src="/img/terre.png"
                                     width={250}
                                     height={150}
+                                    alt="terre"
                                 />
                             </div>
                             Allo la Terre
@@ -26,6 +27,7 @@ export default function projet() {
                                     src="/img/SP.png"
                                     width={250}
                                     height={150}
+                                    alt="terre"
                                 />
                             </div>
                             Spice Bloom
@@ -40,6 +42,7 @@ export default function projet() {
                                     src="/img/film.png"
                                     width={250}
                                     height={150}
+                                    alt="terre"
                                 />
                             </div>
                             Moovies
