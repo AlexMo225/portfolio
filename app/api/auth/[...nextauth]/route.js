@@ -29,9 +29,9 @@ const authOptions = {
   callbacks: {
 
     async signIn({ user: { email } }) {
-
-      return email === process.env.EMAIL_ADMIN
-
+      // Liste des emails autorisés
+      const allowedEmails = [process.env.EMAIL_ADMIN, "caronnet@gmail.com"];
+      return allowedEmails.includes(email);
     },
 
     async redirect({ url, baseUrl }) {

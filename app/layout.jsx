@@ -20,13 +20,13 @@ export default function RootLayout({ children }) {
         <div className="flex justify-between items-center w-full h-35 px-4 text-white bg-black ">
           <div className="logo">
             
-            <Link href="/"> <Image className="avatar" src="/img/Group30.png" width={200} height={200} alt="Alex Morel"/></Link>
+            <Link href="/"> <Image className="avatar p-3"  src="/img/Group30.png" width={200} height={200} alt="Alex Morel"/></Link>
           </div>
             <ul className="hidden md:flex">
               <li><Link href="/projet" className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Projets</Link></li>
 
-              <li><a href="#Expériences" className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Expériences</a></li>
-              <li><a href="#Diplomes" className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Diplomes</a></li>
+              <li><Link href="#Expériences" className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Expériences</Link></li>
+              <li><Link href="#Diplomes" className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Contact</Link></li>
               <li>
               <a href="assets/cv.pdf" target="_blank"  className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500">Voir Cv</a>
               </li>

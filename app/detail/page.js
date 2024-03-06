@@ -46,12 +46,12 @@ export default function detail() {
                             </a>
                         </div>
                         <div className="px-6 py-4 flex justify-end">
-                            <a
+                            <Link
                                 href="/projet"
                                 className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
                             >
                                 Retour
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
