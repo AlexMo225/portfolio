@@ -6,7 +6,7 @@ import { Typewriter } from "react-simple-typewriter";
 export default function Home() {
     return (
         <>
-            <main className=" bg-black p-20 h-full">
+            <main className=" bg-black p-20 min-h-screen">
                 <section className="hero-section py-1">
                     <div className="container mx-auto flex items-center justify-between">
                         <div className="content max-w-md">
