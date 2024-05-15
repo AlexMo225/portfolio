@@ -1,12 +1,12 @@
-import dbConnect from '@/app/lib/mongoose.js'; 
-import Project from '@/app/models/Project.js';
+import dbConnect from "@/lib/mongoose.js";
+import Project from "@/models/Project.js";
 
 await dbConnect();
 
 export async function generateStaticParams() {
     const projects = await Project.find({});
     return projects.map((project) => ({
-        params: { category: project.category, slug: project.slug }
+        params: { category: project.category, slug: project.slug },
     }));
 }
 

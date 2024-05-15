@@ -1,6 +1,6 @@
 // /pages/api/projects.js
-import dbConnect from "@/app/lib/mongoose";
-import Project from "@/app/models/Project";
+import dbConnect from "@/lib/mongoose";
+import Project from "@/models/Project";
 
 export default async function handler(req, res) {
     const { method, body } = req;
