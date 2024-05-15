@@ -45,7 +45,7 @@ export default function RootLayout({ children }) {
 
                         <li>
                             <Link
-                                href="#Expériences"
+                                href="/"
                                 className="px-4 cursor-pointer capitalize font-medium text-gray-500 hover:scale-105 duration-200 hover:text-green-500"
                             >
                                 Expériences

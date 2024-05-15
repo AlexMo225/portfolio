@@ -41,7 +41,7 @@ export default function contact () {
           </button>
         </div>
       </div>
-      <div className="space-y-4">
+      <div className=" space-y-6">
         <div className="mb-4">
           <label htmlFor="address" className="block text-gray-700 font-bold mb-2">
             Adresse:

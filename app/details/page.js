@@ -41,7 +41,7 @@ export default function details() {
                                 href='https://mjm03.fr/dv22sahie/public/'
                                 className="text-sm text-blue-500 hover:text-green-700"
                             >
-                               Voir le site
+                                Voir le site
                             </a>
                         </div>
                         <div className="px-6 py-4 flex justify-end">
