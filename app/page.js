@@ -11,14 +11,14 @@ export default function Home() {
                 <section className="hero-section py-8 lg:py-16">
                     <div className="container mx-auto flex flex-col lg:flex-row items-center justify-between">
                         <div className="content text-center lg:text-left max-w-lg lg:max-w-md mb-12 lg:mb-0">
-                            <h1 className="text-4xl lg:text-7xl font-bold mb-4 text-white-900">
+                            <h1 className="text-4xl text-white lg:text-7xl font-bold mb-4 text-white-900">
                                 Alex Morel
                                 <span className="text-green-500 font-bold">
                                     {" "}
                                     SAHIE.
                                 </span>
                             </h1>
-                            <h2 className="text-2xl lg:text-[2.8rem] capitalize font-bold">
+                            <h2 className="text-2xl  text-white lg:text-[2.8rem] capitalize font-bold">
                                 Je suis{" "}
                                 <span style={{ color: "green", fontWeight: "bold" }}>
                                     <Typewriter
@@ -28,11 +28,11 @@ export default function Home() {
                                             "Full Stack",
                                             "à Webstart Paris.",
                                         ]}
-                                        loop={5}
+                                        loop={6}
                                         cursor
                                         cursorStyle="_"
                                         typeSpeed={150}
-                                        deleteSpeed={50}
+                                        deleteSpeed={70}
                                         delaySpeed={1000}
                                     />
                                 </span>
