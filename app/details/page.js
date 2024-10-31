@@ -11,7 +11,7 @@ export default function details() {
                                 SPICE BLOOM
                             </h2>
                             <p className="mt-2 text-sm text-gray-600">
-                                Site e-commerce pour la vente d epices de tout genre. 
+                                Site e-commerce pour la vente d'epices de tout genre. 
                             </p>
                         </div>
                         <div className="w-full">
@@ -41,7 +41,7 @@ export default function details() {
                                 href='https://alexmorel.alwaysdata.net/public/'
                                 className="text-sm text-blue-500 hover:text-green-700"
                             >
-                                Voir le site
+                                Voir le site 
                             </a>
                         </div>
                         <div className="px-6 py-4 flex justify-end">
