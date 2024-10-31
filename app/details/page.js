@@ -38,7 +38,7 @@ export default function details() {
                         </div>
                         <div className="px-6 py-4 flex justify-start">
                             <a
-                                href='https://mjm03.fr/dv22sahie/public/'
+                                href='https://alexmorel.alwaysdata.net/public/'
                                 className="text-sm text-blue-500 hover:text-green-700"
                             >
                                 Voir le site
