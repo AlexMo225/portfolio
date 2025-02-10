@@ -84,7 +84,7 @@ export default function Home() {
             </div>
           </div>
 
-          {/* Image à droite */}
+    
           <div className="flex justify-center">
             <Image
               className="rounded-lg shadow-lg max-w-full h-auto"
