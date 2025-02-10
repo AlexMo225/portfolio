@@ -1,61 +1,80 @@
-"use client"
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
-export default function film() {
-    return (
-        <>
-            <div className=" py-8">
-                <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-                    <div className="bg-gray-100  shadow-xl rounded-lg overflow-hidden">
-                        <div className="px-6 py-4">
-                            <h2 className="text-4xl font-bold text-gray-800">
-                                Movies
-                            </h2>
-                            <p className="mt-2 text-sm text-gray-600">
-                                Site affichants les derniers Films sorties au Cinema Actuellement
-                            </p>
-                        </div>
-                        <div className="w-full">
-                            <Image
-                                className="object-cover object-center  p-3"
-                                src="/img/film.png"
-                                width={300} height={100} 
-                                alt="film"
-                            />
-                        </div>
-                        <div className="px-6 py-4">
-                            <h3 className="text-xl font-bold text-gray-800">
-                                Détails
-                            </h3>
-                            <ul className="mt-4  text-sm text-gray-600">
-                                <li>Type: Devoir Classe </li>
-                                <li>Date: Avril 2023</li>
-                                <li>Client: Vincent Kpaclo</li>
-                                <li>
-                                    Technologies utilisées: HTML CSS JAVASCRIPT  API
-                                </li>
-                            </ul>
-                        </div>
-                        <div className="px-6 py-4 flex justify-start">
-                            <a
-                                href='https://splendid-belekoy-9b964e.netlify.app/'
-                                className="text-sm text-blue-500 hover:text-green-700"
-                            >
-                               Voir le site
-                            </a>
-                        </div>
-                        <div className="px-6 py-4 flex justify-end">
-                            <Link
-                                href="/projet"
-                                className="bg-green-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
-                            >
-                                Retour
-                            </Link>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            ;
-        </>
-    );
+import { motion } from "framer-motion";
+
+export default function Film() {
+  return (
+    <div className="bg-black text-white min-h-screen flex justify-center items-center py-20">
+      <div className="max-w-4xl w-full mx-6 sm:mx-auto bg-black/30 backdrop-blur-lg border border-gray-700 shadow-lg shadow-yellow-500/30 rounded-lg p-8 relative">
+        
+        {/* TITRE */}
+        <motion.h2
+          initial={{ opacity: 0, y: -20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-4xl font-extrabold text-center text-yellow-400 neon-text"
+        >
+          🎥 MOVIES 🎬
+        </motion.h2>
+
+        {/* DESCRIPTION */}
+        <p className="mt-4 text-center text-gray-300">
+          Site affichant les derniers films sortis au cinéma actuellement.
+        </p>
+
+        {/* IMAGE */}
+        <div className="w-full flex justify-center mt-6">
+          <motion.div
+            whileHover={{ scale: 1.05, boxShadow: "0px 4px 20px rgba(255, 255, 0, 0.5)" }}
+            className="p-3 bg-black/40 rounded-lg shadow-lg"
+          >
+            <Image
+              className="object-cover object-center rounded-md"
+              src="/img/film.png"
+              width={600}
+              height={300}
+              alt="Films en salle"
+            />
+          </motion.div>
+        </div>
+
+        {/* DÉTAILS */}
+        <div className="mt-6 text-gray-300">
+          <h3 className="text-xl font-bold text-yellow-400">📌 Détails</h3>
+          <ul className="mt-3 space-y-2 text-gray-400">
+            <li><span className="font-semibold text-white">Type :</span> Devoir de classe</li>
+            <li><span className="font-semibold text-white">Date :</span> Avril 2023</li>
+            <li><span className="font-semibold text-white">Client :</span> Vincent Kpaclo</li>
+            <li><span className="font-semibold text-white">Technologies :</span> HTML, CSS, JavaScript, API</li>
+          </ul>
+        </div>
+
+        {/* LIEN VERS LE SITE */}
+        <div className="mt-6 text-center">
+          <a
+            href="https://splendid-belekoy-9b964e.netlify.app/"
+            target="_blank"
+            className="text-lg font-bold text-yellow-400 hover:text-yellow-600 transition-all duration-300"
+          >
+            🍿 Voir le site
+          </a>
+        </div>
+
+        {/* BOUTON RETOUR */}
+        <div className="mt-8 flex justify-end">
+          <Link href="/projet">
+            <motion.button
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              className="bg-yellow-500 hover:bg-red-700 text-white font-bold py-2 px-6 rounded-lg transition-all duration-300 shadow-lg"
+            >
+              🔙 Retour
+            </motion.button>
+          </Link>
+        </div>
+      </div>
+    </div>
+  );
 }
