@@ -1,188 +1,126 @@
 "use client";
-import React, { useState } from "react";
+
 import { motion } from "framer-motion";
-import { 
-  FaEnvelope, FaPhone, FaMapMarkerAlt, 
-  FaCheckCircle, FaTimesCircle, FaUser, FaPaperPlane 
-} from "react-icons/fa";
+import { FiMail, FiGithub, FiLinkedin } from "react-icons/fi";
+import dynamic from "next/dynamic";
+
+const NoSSR = dynamic(() => Promise.resolve(({ children }) => children), {
+    ssr: false,
+});
 
 export default function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
+    const contactLinks = [
+        {
+            icon: FiMail,
+            title: "Email",
+            link: "mailto:alexmorel1999@gmail.com",
+            text: "alexmorel1999@gmail.com",
+            color: "emerald",
+            bgClass: "bg-emerald-500/10",
+            hoverBgClass: "group-hover:bg-emerald-500/20",
+            textClass: "text-emerald-400",
+        },
+        {
+            icon: FiGithub,
+            title: "GitHub",
+            link: "https://github.com/AlexMo225",
+            text: "@AlexMo225",
+            color: "blue",
+            bgClass: "bg-blue-500/10",
+            hoverBgClass: "group-hover:bg-blue-500/20",
+            textClass: "text-blue-400",
+        },
+        {
+            icon: FiLinkedin,
+            title: "LinkedIn",
+            link: "https://www.linkedin.com/in/alex-morel-sahie-1a73911b4/",
+            text: "Sahie Alex",
+            color: "purple",
+            bgClass: "bg-purple-500/10",
+            hoverBgClass: "group-hover:bg-purple-500/20",
+            textClass: "text-purple-400",
+        },
+    ];
 
-  const [loading, setLoading] = useState(false);
-  const [success, setSuccess] = useState(false);
-  const [error, setError] = useState("");
-
-  const handleChange = (e) => {
-    const { name, value } = e.target;
-    setFormData({ ...formData, [name]: value });
-  };
-
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    setLoading(true);
-    setError("");
-    setSuccess(false);
-
-    try {
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-      const result = await response.json();
-
-      if (response.ok) {
-        setSuccess(true);
-        setFormData({ name: "", email: "", message: "" });
-      } else {
-        setError(result.message || "Une erreur est survenue, réessayez.");
-      }
-    } catch {
-      setError("Une erreur est survenue, réessayez.");
-    } finally {
-      setLoading(false);
-    }
-  };
-
-  return (
-    <div className="min-h-screen flex items-center justify-center bg-black p-6 relative">
-      {/* Déco en arrière-plan */}
-      <div className="absolute inset-0 bg-gradient-to-br from-green-900 to-black opacity-40 blur-3xl"></div>
-
-      {/* Contenu principal */}
-      <motion.div
-        initial={{ opacity: 0, scale: 0.9 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{ duration: 0.6 }}
-        className="bg-gray-900 max-w-4xl w-full p-8 rounded-xl shadow-xl border border-gray-700 relative z-10"
-      >
-        <h2 className="text-4xl font-extrabold text-center text-white mb-8">
-          Contactez-moi
-        </h2>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
-          {/* Formulaire */}
-          <motion.form 
-            onSubmit={handleSubmit} 
-            className="space-y-6"
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-          >
-            {/* Champ Nom */}
-            <div className="relative">
-              <FaUser className="absolute left-3 top-3 text-green-400 text-xl" />
-              <input
-                type="text"
-                name="name"
-                placeholder="Nom"
-                className="w-full p-3 pl-10 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                value={formData.name}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Champ Email */}
-            <div className="relative">
-              <FaEnvelope className="absolute left-3 top-3 text-green-400 text-xl" />
-              <input
-                type="email"
-                name="email"
-                placeholder="Email"
-                className="w-full p-3 pl-10 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                value={formData.email}
-                onChange={handleChange}
-                required
-              />
-            </div>
-
-            {/* Champ Message */}
-            <div className="relative">
-              <FaPaperPlane className="absolute left-3 top-3 text-green-400 text-xl" />
-              <textarea
-                name="message"
-                placeholder="Votre message..."
-                rows="4"
-                className="w-full p-3 pl-10 rounded-lg bg-gray-800 text-white focus:outline-none focus:ring-2 focus:ring-green-500 transition-all"
-                value={formData.message}
-                onChange={handleChange}
-                required
-              ></textarea>
-            </div>
-
-            {/* Bouton Submit */}
-            <motion.button
-              type="submit"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              className="w-full bg-green-500 text-white font-bold py-3 px-4 rounded-lg hover:bg-green-600 transition-all shadow-lg hover:shadow-green-500/50"
-              disabled={loading}
+    return (
+        <div className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 min-h-screen flex flex-col items-center justify-center py-16 px-4 pt-24 transition-colors duration-300">
+            <motion.div
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.6 }}
+                className="max-w-4xl w-full mx-auto"
             >
-              {loading ? "Envoi..." : "Envoyer"}
-            </motion.button>
-          </motion.form>
+                <NoSSR>
+                    <div className="bg-white/90 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-200 dark:border-gray-700/50 rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                        {/* Effet de gradient en arrière-plan */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 opacity-50 pointer-events-none"></div>
 
-          {/* Infos de contact */}
-          <motion.div 
-            className="space-y-6 text-white"
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-          >
-            <div className="flex items-center space-x-4">
-              <FaMapMarkerAlt className="text-green-400 text-2xl" />
-              <div>
-                <p className="font-semibold">Adresse</p>
-                <p className="text-gray-400">Votre adresse ici</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaPhone className="text-green-400 text-2xl" />
-              <div>
-                <p className="font-semibold">Téléphone</p>
-                <p className="text-gray-400">0766167789</p>
-              </div>
-            </div>
-            <div className="flex items-center space-x-4">
-              <FaEnvelope className="text-green-400 text-2xl" />
-              <div>
-                <p className="font-semibold">Email</p>
-                <p className="text-gray-400">alexmorel1999@gmail.com</p>
-              </div>
-            </div>
-          </motion.div>
-        </div>
+                        {/* Titre et description */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.2 }}
+                            className="relative z-10 text-center mb-12"
+                        >
+                            <h1 className="text-4xl md:text-5xl font-bold bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
+                                📬 Contactez-moi
+                            </h1>
+                            <p className="mt-4 text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
+                                N'hésitez pas à me contacter pour discuter de
+                                vos projets ou pour toute question.
+                            </p>
+                        </motion.div>
 
-        {/* Messages de succès ou d'erreur */}
-        <div className="mt-6">
-          {success && (
-            <motion.div 
-              className="flex items-center bg-green-500 text-white p-3 rounded-lg animate-fadeIn"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-            >
-              <FaCheckCircle className="mr-2" /> Message envoyé avec succès !
+                        {/* Cartes de contact */}
+                        <div className="grid md:grid-cols-3 gap-6 relative z-10">
+                            {contactLinks.map((item, index) => (
+                                <motion.a
+                                    key={item.title}
+                                    href={item.link}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    initial={{ opacity: 0, y: 20 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{
+                                        duration: 0.6,
+                                        delay: 0.3 + index * 0.1,
+                                    }}
+                                    whileHover={{ scale: 1.05 }}
+                                    whileTap={{ scale: 0.95 }}
+                                    className="bg-gray-100/70 dark:bg-gray-700/30 hover:bg-gray-200/80 dark:hover:bg-gray-700/50 rounded-xl p-6 flex flex-col items-center text-center group cursor-pointer transition-all duration-300"
+                                >
+                                    <div
+                                        className={`w-16 h-16 ${item.bgClass} rounded-full flex items-center justify-center mb-4 ${item.hoverBgClass} transition-colors duration-300`}
+                                    >
+                                        <item.icon
+                                            className={`text-3xl ${item.textClass}`}
+                                        />
+                                    </div>
+                                    <h3 className="text-xl font-semibold text-white mb-2">
+                                        {item.title}
+                                    </h3>
+                                    <p className="text-gray-400 group-hover:text-gray-300 transition-colors duration-300">
+                                        {item.text}
+                                    </p>
+                                </motion.a>
+                            ))}
+                        </div>
+
+                        {/* Message de disponibilité */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
+                            className="mt-12 text-center relative z-10"
+                        >
+                            <p className="text-gray-400 text-lg">
+                                Disponible pour de nouvelles opportunités et
+                                collaborations
+                            </p>
+                        </motion.div>
+                    </div>
+                </NoSSR>
             </motion.div>
-          )}
-          {error && (
-            <motion.div 
-              className="flex items-center bg-red-500 text-white p-3 rounded-lg animate-fadeIn"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ duration: 0.4 }}
-            >
-              <FaTimesCircle className="mr-2" /> {error}
-            </motion.div>
-          )}
         </div>
-      </motion.div>
-    </div>
-  );
+    );
 }
