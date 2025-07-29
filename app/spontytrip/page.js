@@ -119,11 +119,45 @@ export default function SpontyTrip() {
                             </p>
                         </motion.div>
 
+                        {/* Image de couverture Sponty Trip */}
+                        <motion.div
+                            initial={{ opacity: 0, y: 30 }}
+                            animate={{ opacity: 1, y: 0 }}
+                            transition={{ duration: 0.8, delay: 0.3 }}
+                            className="mt-12 mb-8 relative max-w-4xl mx-auto"
+                        >
+                            <div className="relative group">
+                                {/* Effet de glow en arrière-plan */}
+                                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                                {/* Image principale */}
+                                <div className="relative rounded-xl overflow-hidden shadow-2xl">
+                                    <Image
+                                        src="/img/sponty.png"
+                                        alt="Sponty Trip - Interface de l'application"
+                                        width={1200}
+                                        height={675}
+                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
+                                        priority
+                                    />
+
+                                    {/* Overlay avec label */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                                        <div className="absolute bottom-4 left-4">
+                                            <div className="bg-emerald-500/90 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm shadow-lg">
+                                                🖼️ Interface Application
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </motion.div>
+
                         {/* Vidéo de démonstration */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.4 }}
+                            transition={{ duration: 0.6, delay: 0.6 }}
                             className="mt-8 relative max-w-4xl mx-auto"
                         >
                             <div className="relative rounded-xl overflow-hidden group bg-black shadow-2xl">
@@ -318,33 +352,25 @@ export default function SpontyTrip() {
                                         <span className="text-emerald-400">
                                             •
                                         </span>
-                                        <span>
-                                        Checklist collaborative
-                                        </span>
+                                        <span>Checklist collaborative</span>
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-emerald-400">
                                             •
                                         </span>
-                                        <span>
-                                        Gestion des dépenses
-                                        </span>
+                                        <span>Gestion des dépenses</span>
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-emerald-400">
                                             •
                                         </span>
-                                        <span>
-                                        Suggestions de destination
-                                        </span>
+                                        <span>Suggestions de destination</span>
                                     </li>
                                     <li className="flex items-start gap-2">
                                         <span className="text-emerald-400">
                                             •
                                         </span>
-                                        <span>
-                                        Notes collaboratives
-                                        </span>
+                                        <span>Notes collaboratives</span>
                                     </li>
                                 </ul>
                             </div>
