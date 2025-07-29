@@ -5,7 +5,21 @@ import Project from "@/models/Project";
 export default async function handler(req, res) {
     const { method, body } = req;
 
-    await dbConnect();
+    try {
+        const connection = await dbConnect();
+        if (!connection) {
+            return res.status(503).json({
+                success: false,
+                error: "Database not available",
+            });
+        }
+    } catch (error) {
+        console.error("Database connection error:", error);
+        return res.status(503).json({
+            success: false,
+            error: "Database connection failed",
+        });
+    }
 
     if (method === "POST") {
         try {
