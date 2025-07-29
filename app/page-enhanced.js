@@ -6,7 +6,12 @@ import "bootstrap-icons/font/bootstrap-icons.css";
 import { Typewriter } from "react-simple-typewriter";
 import { motion } from "framer-motion";
 
-export default function Home() {
+// Nouveaux composants
+import SkillsSection from "@/components/SkillsSection";
+import StatsCounter from "@/components/StatsCounter";
+import CallToAction from "@/components/CallToAction";
+
+export default function HomeEnhanced() {
     return (
         <>
             {/* SEO Dynamique */}
@@ -18,7 +23,7 @@ export default function Home() {
                 />
             </Head>
 
-            {/* Contenu principal */}
+            {/* Section Hero existante */}
             <main className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 p-6 lg:p-20 min-h-screen flex items-center justify-center transition-colors duration-300">
                 <section className="container mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
                     {/* Texte à gauche */}
@@ -126,6 +131,7 @@ export default function Home() {
                         </motion.div>
                     </motion.div>
 
+                    {/* Image corrigée */}
                     <motion.div
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
@@ -147,6 +153,11 @@ export default function Home() {
                     </motion.div>
                 </section>
             </main>
+
+            {/* NOUVELLES SECTIONS */}
+            <SkillsSection />
+            <StatsCounter />
+            <CallToAction />
         </>
     );
 }
