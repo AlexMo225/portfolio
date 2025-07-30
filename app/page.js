@@ -19,7 +19,7 @@ export default function Home() {
             </Head>
 
             {/* Contenu principal */}
-            <main className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 p-6 lg:p-20 min-h-screen flex items-center justify-center transition-colors duration-300">
+            <main className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 pt-24 px-6 pb-6 lg:p-20 min-h-screen flex items-center justify-center transition-colors duration-300">
                 <section className="container mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
                     {/* Texte à gauche */}
                     <motion.div
@@ -130,7 +130,7 @@ export default function Home() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="flex justify-center px-4 sm:px-0"
+                        className="flex justify-center px-4 sm:px-0 mt-8 sm:mt-0"
                     >
                         <div className="relative w-full max-w-sm mx-auto">
                             {/* Cercles animés en arrière-plan */}
