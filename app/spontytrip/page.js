@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 import { motion, AnimatePresence } from "framer-motion";
 import {
@@ -57,7 +58,7 @@ export default function SpontyTrip() {
     };
 
     return (
-        <div className="bg-gradient-to-br from-black to-gray-900 text-white min-h-screen flex justify-center items-center py-20 px-4 pt-24">
+        <div className="bg-white dark:bg-gradient-to-br dark:from-black dark:to-gray-900 text-gray-900 dark:text-white min-h-screen flex justify-center items-center py-20 px-4 pt-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -70,7 +71,7 @@ export default function SpontyTrip() {
                         <motion.button
                             whileHover={{ scale: 1.05, x: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                            className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiArrowLeft className="text-xl" />
                             <span>Retour aux projets</span>
@@ -81,7 +82,7 @@ export default function SpontyTrip() {
                             href="https://github.com/AlexMo225/sponty-trip"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiGithub className="text-2xl" />
                         </a>
@@ -89,7 +90,7 @@ export default function SpontyTrip() {
                             href="https://spontytriplp.netlify.app"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiExternalLink className="text-2xl" />
                         </a>
@@ -98,7 +99,7 @@ export default function SpontyTrip() {
 
                 {/* Contenu principal */}
                 <NoSSR>
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                    <div className="bg-gray-100/80 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300/50 dark:border-gray-700/50 rounded-2xl p-8 shadow-xl relative overflow-hidden">
                         {/* Effet de gradient en arrière-plan */}
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 opacity-50 pointer-events-none"></div>
 
@@ -112,60 +113,26 @@ export default function SpontyTrip() {
                             <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                                 ✈️ Sponty Trip
                             </h1>
-                            <p className="mt-4 text-center text-gray-300 text-lg max-w-2xl mx-auto">
+                            <p className="mt-4 text-center text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
                                 Une plateforme moderne de planification de
                                 voyages spontanés et d'organisation
                                 d'itinéraires.
                             </p>
                         </motion.div>
 
-                        {/* Image de couverture Sponty Trip */}
-                        <motion.div
-                            initial={{ opacity: 0, y: 30 }}
-                            animate={{ opacity: 1, y: 0 }}
-                            transition={{ duration: 0.8, delay: 0.3 }}
-                            className="mt-12 mb-8 relative max-w-4xl mx-auto"
-                        >
-                            <div className="relative group">
-                                {/* Effet de glow en arrière-plan */}
-                                <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500/20 to-blue-500/20 rounded-2xl blur-xl opacity-70 group-hover:opacity-100 transition-opacity duration-500"></div>
-
-                                {/* Image principale */}
-                                <div className="relative rounded-xl overflow-hidden shadow-2xl">
-                                    <Image
-                                        src="/img/sponty.png"
-                                        alt="Sponty Trip - Interface de l'application"
-                                        width={1200}
-                                        height={675}
-                                        className="w-full h-auto object-cover transition-transform duration-500 group-hover:scale-105"
-                                        priority
-                                    />
-
-                                    {/* Overlay avec label */}
-                                    <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                        <div className="absolute bottom-4 left-4">
-                                            <div className="bg-emerald-500/90 text-white px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm shadow-lg">
-                                                🖼️ Interface Application
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </motion.div>
-
-                        {/* Vidéo de démonstration */}
+                        {/* Vidéo de démonstration avec image en fond */}
                         <motion.div
                             initial={{ opacity: 0, scale: 0.95 }}
                             animate={{ opacity: 1, scale: 1 }}
-                            transition={{ duration: 0.6, delay: 0.6 }}
-                            className="mt-8 relative max-w-4xl mx-auto"
+                            transition={{ duration: 0.6, delay: 0.3 }}
+                            className="mt-12 relative max-w-3xl mx-auto"
                         >
                             <div className="relative rounded-xl overflow-hidden group bg-black shadow-2xl">
                                 {/* Vidéo principale */}
                                 <video
                                     ref={videoRef}
-                                    className="w-full h-auto object-cover"
-                                    poster="/img/spps.png"
+                                    className="w-full h-auto object-cover max-h-[60vh]"
+                                    poster="/img/sponty.png"
                                     onPlay={() => setIsVideoPlaying(true)}
                                     onPause={() => setIsVideoPlaying(false)}
                                     controls={false}
@@ -302,21 +269,21 @@ export default function SpontyTrip() {
                                     <h3 className="text-xl font-semibold text-emerald-400 mb-3">
                                         📌 À propos du projet
                                     </h3>
-                                    <ul className="space-y-3 text-gray-300">
+                                    <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Type :
                                             </span>
                                             <span>Projet personnel</span>
                                         </li>
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Date :
                                             </span>
                                             <span>Avril 2025</span>
                                         </li>
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Client :
                                             </span>
                                             <span>Projet personnel</span>
@@ -347,7 +314,7 @@ export default function SpontyTrip() {
                                 <h3 className="text-xl font-semibold text-emerald-400 mb-3">
                                     ✨ Fonctionnalités
                                 </h3>
-                                <ul className="space-y-3 text-gray-300">
+                                <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                                     <li className="flex items-start gap-2">
                                         <span className="text-emerald-400">
                                             •
@@ -433,7 +400,7 @@ export default function SpontyTrip() {
                                             className="w-full h-auto max-h-[80vh] object-contain bg-black"
                                             controls
                                             autoPlay
-                                            poster="/img/spps.png"
+                                            poster="/img/sponty.png"
                                             controlsList="nodownload"
                                         >
                                             <source
@@ -453,7 +420,7 @@ export default function SpontyTrip() {
                                         <h3 className="text-2xl font-bold mb-2">
                                             ✈️ Sponty Trip - Démonstration
                                         </h3>
-                                        <p className="text-gray-300">
+                                        <p className="text-gray-600 dark:text-gray-300">
                                             Explorez toutes les fonctionnalités
                                             de l'application de voyage
                                         </p>

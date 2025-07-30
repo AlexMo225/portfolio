@@ -11,34 +11,38 @@ export default function Projet() {
         {
             title: "Bienvenue sur la Terre",
             description: "Site API Météo",
-            image: "v1717446005/portfolio/k2cbtaaipkbef0nccb0f.png",
+            image: "/img/terre.png",
             link: "/detail",
             category: "api",
             technologies: ["React", "API", "Tailwind"],
+            isLocal: true,
         },
         {
             title: "SPICE BLOOM",
             description: "Site E-commerce vente d'épices",
-            image: "v1717446005/portfolio/dvdcdhwdo0rznrvdkpfk",
+            image: "/img/SP.png",
             link: "/details",
             category: "ecommerce",
             technologies: ["Next.js", "Stripe", "Tailwind"],
+            isLocal: true,
         },
         {
             title: "Ciné",
             description: "Site API Cinéma",
-            image: "v1717446013/portfolio/pvs3e3fxudzmq7psrwuv.png",
+            image: "/img/film.png",
             link: "/film",
             category: "api",
             technologies: ["React", "API", "CSS"],
+            isLocal: true,
         },
         {
             title: "Sponty Trip",
             description: "Plateforme de planification de voyages",
-            image: "v1717446013/portfolio/spps",
+            image: "/img/sponty.png",
             link: "/spontytrip",
             category: "voyage",
             technologies: ["React", "API", "Tailwind CSS"],
+            isLocal: true,
         },
     ];
 
@@ -112,14 +116,26 @@ export default function Projet() {
 
                                     {/* IMAGE */}
                                     <div className="relative overflow-hidden rounded-lg">
-                                        <CldImage
-                                            src={`https://res.cloudinary.com/${process.env.NEXT_PUBLIC_CLOUDINARY_CLOUD_NAME}/image/upload/${project.image}`}
-                                            alt={project.title}
-                                            className="h-64 w-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
-                                            width={300}
-                                            height={200}
-                                            priority
-                                        />
+                                        {project.isLocal ? (
+                                            <img
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="h-64 w-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+                                                style={{
+                                                    width: "100%",
+                                                    height: "256px",
+                                                }}
+                                            />
+                                        ) : (
+                                            <CldImage
+                                                src={project.image}
+                                                alt={project.title}
+                                                className="h-64 w-full object-cover object-center transform transition-transform duration-500 group-hover:scale-110"
+                                                width={300}
+                                                height={200}
+                                                priority
+                                            />
+                                        )}
                                         <div className="absolute inset-0 bg-gradient-to-t from-gray-900/80 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
                                     </div>
 

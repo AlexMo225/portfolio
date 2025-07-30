@@ -19,7 +19,7 @@ export default function Film() {
     ];
 
     return (
-        <div className="bg-gradient-to-br from-black to-gray-900 text-white min-h-screen flex justify-center items-center py-20 px-4 pt-24">
+        <div className="bg-white dark:bg-gradient-to-br dark:from-black dark:to-gray-900 text-gray-900 dark:text-white min-h-screen flex justify-center items-center py-20 px-4 pt-24">
             <motion.div
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
@@ -32,7 +32,7 @@ export default function Film() {
                         <motion.button
                             whileHover={{ scale: 1.05, x: -5 }}
                             whileTap={{ scale: 0.95 }}
-                            className="flex items-center gap-2 text-gray-400 hover:text-white transition-colors"
+                            className="flex items-center gap-2 text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiArrowLeft className="text-xl" />
                             <span>Retour aux projets</span>
@@ -43,7 +43,7 @@ export default function Film() {
                             href="https://github.com/AlexMo225/tp-tmdb-dynamique-ladthomas?tab=readme-ov-file"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiGithub className="text-2xl" />
                         </a>
@@ -51,7 +51,7 @@ export default function Film() {
                             href="https://splendid-belekoy-9b964e.netlify.app/"
                             target="_blank"
                             rel="noopener noreferrer"
-                            className="text-gray-400 hover:text-white transition-colors"
+                            className="text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors"
                         >
                             <FiExternalLink className="text-2xl" />
                         </a>
@@ -60,7 +60,7 @@ export default function Film() {
 
                 {/* Contenu principal */}
                 <NoSSR>
-                    <div className="bg-gray-800/50 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 shadow-xl relative overflow-hidden">
+                    <div className="bg-gray-100/80 dark:bg-gray-800/50 backdrop-blur-sm border border-gray-300/50 dark:border-gray-700/50 rounded-2xl p-8 shadow-xl relative overflow-hidden">
                         {/* Effet de gradient en arrière-plan */}
                         <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/5 to-blue-500/5 opacity-50 pointer-events-none"></div>
 
@@ -74,7 +74,7 @@ export default function Film() {
                             <h1 className="text-4xl md:text-5xl font-bold text-center bg-gradient-to-r from-emerald-400 to-blue-400 bg-clip-text text-transparent">
                                 🎬 Ciné
                             </h1>
-                            <p className="mt-4 text-center text-gray-300 text-lg max-w-2xl mx-auto">
+                            <p className="mt-4 text-center text-gray-600 dark:text-gray-300 text-lg max-w-2xl mx-auto">
                                 Une application de recherche de films avec une
                                 interface moderne et intuitive.
                             </p>
@@ -113,21 +113,21 @@ export default function Film() {
                                     <h3 className="text-xl font-semibold text-emerald-400 mb-3">
                                         📌 À propos du projet
                                     </h3>
-                                    <ul className="space-y-3 text-gray-300">
+                                    <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Type :
                                             </span>
                                             <span>Projet personnel</span>
                                         </li>
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Date :
                                             </span>
                                             <span>Mars 2024</span>
                                         </li>
                                         <li className="flex items-center gap-2">
-                                            <span className="font-medium text-white">
+                                            <span className="font-medium text-gray-900 dark:text-white">
                                                 Client :
                                             </span>
                                             <span>Projet personnel</span>
@@ -158,7 +158,7 @@ export default function Film() {
                                 <h3 className="text-xl font-semibold text-emerald-400 mb-3">
                                     ✨ Fonctionnalités
                                 </h3>
-                                <ul className="space-y-3 text-gray-300">
+                                <ul className="space-y-3 text-gray-600 dark:text-gray-300">
                                     <li className="flex items-start gap-2">
                                         <span className="text-emerald-400">
                                             •
