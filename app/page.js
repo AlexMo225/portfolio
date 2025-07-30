@@ -132,17 +132,46 @@ export default function Home() {
                         transition={{ duration: 0.8 }}
                         className="flex justify-center px-4 sm:px-0"
                     >
-                        <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg">
-                            <div className="absolute inset-0 bg-emerald-500/20 rounded-lg blur-2xl pointer-events-none"></div>
-                            <Image
-                                className="rounded-lg shadow-2xl w-full h-auto object-cover object-center relative z-10 hover:scale-105 transition-transform duration-500"
-                                src="/img/profil.png"
-                                width={500}
-                                height={500}
-                                alt="Alex Morel"
-                                priority
-                                sizes="(max-width: 640px) 80vw, (max-width: 768px) 60vw, (max-width: 1024px) 50vw, 400px"
-                            />
+                        <div className="relative w-full max-w-sm mx-auto">
+                            {/* Cercles animés en arrière-plan */}
+                            <div className="absolute inset-0 animate-spin-slow">
+                                <div className="absolute top-0 left-1/2 w-3 h-3 bg-emerald-400 rounded-full transform -translate-x-1/2 animate-pulse"></div>
+                                <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-emerald-300 rounded-full transform -translate-x-1/2 animate-pulse delay-1000"></div>
+                                <div className="absolute left-0 top-1/2 w-2.5 h-2.5 bg-emerald-500 rounded-full transform -translate-y-1/2 animate-pulse delay-500"></div>
+                                <div className="absolute right-0 top-1/2 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2 animate-pulse delay-1500"></div>
+                            </div>
+
+                            {/* Ring externe qui pulse */}
+                            <div className="absolute inset-0 rounded-full border-2 border-emerald-400/30 animate-ping"></div>
+                            <div className="absolute inset-2 rounded-full border border-emerald-300/20 animate-pulse"></div>
+
+                            {/* Glow principal */}
+                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 via-emerald-500/40 to-emerald-400/30 rounded-full blur-xl animate-pulse"></div>
+
+                            {/* Container de l'image ronde */}
+                            <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-white/10 group">
+                                {/* Gradient overlay pour l'effet de profondeur */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-emerald-900/20 rounded-full z-20 group-hover:to-emerald-500/30 transition-all duration-500"></div>
+
+                                <Image
+                                    className="w-full h-full object-cover object-center relative z-10 group-hover:scale-110 transition-all duration-700 ease-out"
+                                    src="/img/profil.png"
+                                    width={400}
+                                    height={400}
+                                    alt="Alex Morel"
+                                    priority
+                                    sizes="(max-width: 640px) 300px, 400px"
+                                />
+
+                                {/* Ring intérieur qui brille */}
+                                <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 group-hover:border-emerald-300/70 transition-all duration-500"></div>
+                            </div>
+
+                            {/* Étoiles scintillantes */}
+                            <div className="absolute -top-2 -right-2 w-1 h-1 bg-emerald-300 rounded-full animate-twinkle"></div>
+                            <div className="absolute -bottom-3 -left-1 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-twinkle delay-700"></div>
+                            <div className="absolute top-1/4 -left-3 w-1 h-1 bg-emerald-200 rounded-full animate-twinkle delay-300"></div>
+                            <div className="absolute bottom-1/3 -right-2 w-1 h-1 bg-emerald-500 rounded-full animate-twinkle delay-1000"></div>
                         </div>
                     </motion.div>
                 </section>
