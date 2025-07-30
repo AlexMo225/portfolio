@@ -19,7 +19,7 @@ export default function Home() {
             </Head>
 
             {/* Contenu principal */}
-            <main className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 pt-24 px-6 pb-6 lg:p-20 min-h-screen flex items-center justify-center transition-colors duration-300">
+            <main className="bg-gradient-to-br from-gray-50 to-white dark:from-black dark:to-gray-900 pt-24 px-6 pb-6 lg:p-20 min-h-screen flex items-center justify-center transition-colors duration-300 overflow-x-hidden">
                 <section className="container mx-auto flex flex-col-reverse md:grid md:grid-cols-2 gap-10 items-center">
                     {/* Texte à gauche */}
                     <motion.div
@@ -42,16 +42,16 @@ export default function Home() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ delay: 0.4 }}
-                            className="text-2xl lg:text-4xl font-bold mt-4 text-gray-900 dark:text-white"
+                            className="text-2xl lg:text-4xl font-bold mt-4 text-gray-900 dark:text-white max-w-full overflow-hidden"
                         >
                             Je suis{" "}
-                            <span className="text-emerald-500 font-bold">
+                            <span className="text-emerald-500 font-bold block sm:inline">
                                 <Typewriter
                                     words={[
                                         "Étudiant",
-                                        "Développeur Web",
+                                        "Développeur",
                                         "Full Stack",
-                                        "à Webstart Paris.",
+                                        "à Webstart Paris",
                                     ]}
                                     loop={6}
                                     cursor
@@ -130,48 +130,97 @@ export default function Home() {
                         initial={{ opacity: 0, scale: 0.8 }}
                         animate={{ opacity: 1, scale: 1 }}
                         transition={{ duration: 0.8 }}
-                        className="flex justify-center px-4 sm:px-0 mt-8 sm:mt-0"
+                        className="flex justify-center mt-8 sm:mt-0"
                     >
-                        <div className="relative w-full max-w-sm mx-auto">
-                            {/* Cercles animés en arrière-plan */}
-                            <div className="absolute inset-0 animate-spin-slow">
-                                <div className="absolute top-0 left-1/2 w-3 h-3 bg-emerald-400 rounded-full transform -translate-x-1/2 animate-pulse"></div>
-                                <div className="absolute bottom-0 left-1/2 w-2 h-2 bg-emerald-300 rounded-full transform -translate-x-1/2 animate-pulse delay-1000"></div>
-                                <div className="absolute left-0 top-1/2 w-2.5 h-2.5 bg-emerald-500 rounded-full transform -translate-y-1/2 animate-pulse delay-500"></div>
-                                <div className="absolute right-0 top-1/2 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2 animate-pulse delay-1500"></div>
+                        {/* VERSION MOBILE - DESIGN PREMIUM & ÉLÉGANT */}
+                        <div className="block sm:hidden w-80 mx-auto px-4">
+                            <div className="relative w-72 h-72 mx-auto">
+                                {/* Glow principal magnifique */}
+                                <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/40 via-cyan-400/30 to-emerald-500/40 rounded-full blur-xl animate-pulse"></div>
+
+                                {/* Ring elegant avec dégradé */}
+                                <div className="absolute inset-3 rounded-full bg-gradient-to-tr from-emerald-400/20 via-transparent to-cyan-400/20 animate-pulse"></div>
+                                <div className="absolute inset-3 rounded-full border-2 border-gradient-to-r from-emerald-400/60 via-cyan-300/40 to-emerald-500/60 animate-pulse"></div>
+
+                                {/* Container image premium */}
+                                <div className="absolute inset-6 rounded-full overflow-hidden shadow-2xl group">
+                                    {/* Background dégradé animé */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-emerald-500/20 via-cyan-400/15 to-emerald-600/25 rounded-full animate-pulse"></div>
+
+                                    {/* Border extérieur élégant */}
+                                    <div className="absolute inset-0 rounded-full border-4 border-white/30 shadow-lg"></div>
+
+                                    {/* Image avec effet premium */}
+                                    <Image
+                                        className="w-full h-full object-cover object-center rounded-full relative z-10 group-hover:scale-110 transition-all duration-700 ease-out filter brightness-105 contrast-105"
+                                        src="/img/profil.png"
+                                        width={240}
+                                        height={240}
+                                        alt="Alex Morel"
+                                        priority
+                                        sizes="240px"
+                                    />
+
+                                    {/* Overlay gradient sophistiqué */}
+                                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/10 via-transparent to-cyan-400/10 rounded-full group-hover:from-emerald-900/20 group-hover:to-cyan-400/20 transition-all duration-700"></div>
+
+                                    {/* Border intérieur qui brille */}
+                                    <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 group-hover:border-cyan-300/70 transition-all duration-500"></div>
+                                </div>
+
+                                {/* Particules élégantes */}
+                                <div className="absolute inset-8 pointer-events-none">
+                                    <div className="absolute top-2 right-4 w-1 h-1 bg-emerald-300 rounded-full animate-ping opacity-75"></div>
+                                    <div className="absolute bottom-4 left-2 w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse opacity-60"></div>
+                                    <div className="absolute top-8 left-6 w-0.5 h-0.5 bg-emerald-200 rounded-full animate-ping opacity-80 animation-delay-1000"></div>
+                                </div>
                             </div>
+                        </div>
 
-                            {/* Ring externe qui pulse */}
-                            <div className="absolute inset-0 rounded-full border-2 border-emerald-400/30 animate-ping"></div>
-                            <div className="absolute inset-2 rounded-full border border-emerald-300/20 animate-pulse"></div>
+                        {/* VERSION DESKTOP - Avec toutes les animations */}
+                        <div className="hidden sm:block relative w-full max-w-sm mx-auto">
+                            {/* Container avec padding pour contenir les débordements */}
+                            <div className="relative p-6">
+                                {/* Cercles animés en arrière-plan */}
+                                <div className="absolute inset-6 animate-spin-slow">
+                                    <div className="absolute -top-1 left-1/2 w-3 h-3 bg-emerald-400 rounded-full transform -translate-x-1/2 animate-pulse"></div>
+                                    <div className="absolute -bottom-1 left-1/2 w-2 h-2 bg-emerald-300 rounded-full transform -translate-x-1/2 animate-pulse delay-1000"></div>
+                                    <div className="absolute -left-1 top-1/2 w-2.5 h-2.5 bg-emerald-500 rounded-full transform -translate-y-1/2 animate-pulse delay-500"></div>
+                                    <div className="absolute -right-1 top-1/2 w-2 h-2 bg-emerald-400 rounded-full transform -translate-y-1/2 animate-pulse delay-1500"></div>
+                                </div>
 
-                            {/* Glow principal */}
-                            <div className="absolute inset-0 bg-gradient-to-r from-emerald-400/30 via-emerald-500/40 to-emerald-400/30 rounded-full blur-xl animate-pulse"></div>
+                                {/* Ring externe qui pulse */}
+                                <div className="absolute inset-6 rounded-full border-2 border-emerald-400/30 animate-ping"></div>
+                                <div className="absolute inset-7 rounded-full border border-emerald-300/20 animate-pulse"></div>
 
-                            {/* Container de l'image ronde */}
-                            <div className="relative w-full aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-white/10 group">
-                                {/* Gradient overlay pour l'effet de profondeur */}
-                                <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-emerald-900/20 rounded-full z-20 group-hover:to-emerald-500/30 transition-all duration-500"></div>
+                                {/* Glow principal */}
+                                <div className="absolute inset-4 bg-gradient-to-r from-emerald-400/30 via-emerald-500/40 to-emerald-400/30 rounded-full blur-xl animate-pulse"></div>
 
-                                <Image
-                                    className="w-full h-full object-cover object-center relative z-10 group-hover:scale-110 transition-all duration-700 ease-out"
-                                    src="/img/profil.png"
-                                    width={400}
-                                    height={400}
-                                    alt="Alex Morel"
-                                    priority
-                                    sizes="(max-width: 640px) 300px, 400px"
-                                />
+                                {/* Container de l'image ronde */}
+                                <div className="relative mx-6 aspect-square rounded-full overflow-hidden shadow-2xl border-4 border-white/10 group">
+                                    {/* Gradient overlay pour l'effet de profondeur */}
+                                    <div className="absolute inset-0 bg-gradient-to-br from-transparent via-transparent to-emerald-900/20 rounded-full z-20 group-hover:to-emerald-500/30 transition-all duration-500"></div>
 
-                                {/* Ring intérieur qui brille */}
-                                <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 group-hover:border-emerald-300/70 transition-all duration-500"></div>
+                                    <Image
+                                        className="w-full h-full object-cover object-center relative z-10 group-hover:scale-110 transition-all duration-700 ease-out"
+                                        src="/img/profil.png"
+                                        width={400}
+                                        height={400}
+                                        alt="Alex Morel"
+                                        priority
+                                        sizes="400px"
+                                    />
+
+                                    {/* Ring intérieur qui brille */}
+                                    <div className="absolute inset-0 rounded-full border-2 border-emerald-400/50 group-hover:border-emerald-300/70 transition-all duration-500"></div>
+                                </div>
+
+                                {/* Étoiles scintillantes */}
+                                <div className="absolute top-2 right-2 w-1.5 h-1.5 bg-emerald-300 rounded-full animate-twinkle"></div>
+                                <div className="absolute bottom-3 left-3 w-2 h-2 bg-emerald-400 rounded-full animate-twinkle delay-700"></div>
+                                <div className="absolute top-1/4 left-2 w-1 h-1 bg-emerald-200 rounded-full animate-twinkle delay-300"></div>
+                                <div className="absolute bottom-1/4 right-3 w-1.5 h-1.5 bg-emerald-500 rounded-full animate-twinkle delay-1000"></div>
                             </div>
-
-                            {/* Étoiles scintillantes */}
-                            <div className="absolute -top-2 -right-2 w-1 h-1 bg-emerald-300 rounded-full animate-twinkle"></div>
-                            <div className="absolute -bottom-3 -left-1 w-1.5 h-1.5 bg-emerald-400 rounded-full animate-twinkle delay-700"></div>
-                            <div className="absolute top-1/4 -left-3 w-1 h-1 bg-emerald-200 rounded-full animate-twinkle delay-300"></div>
-                            <div className="absolute bottom-1/3 -right-2 w-1 h-1 bg-emerald-500 rounded-full animate-twinkle delay-1000"></div>
                         </div>
                     </motion.div>
                 </section>
