@@ -9,6 +9,15 @@ export default function Projet() {
 
     const projects = [
         {
+            title: "Sponty Trip",
+            description: "Plateforme de planification de voyages",
+            image: "/img/sponty.png",
+            link: "/spontytrip",
+            category: "voyage",
+            technologies: ["React", "API", "Tailwind CSS"],
+            isLocal: true,
+        },
+        {
             title: "Bienvenue sur la Terre",
             description: "Site API Météo",
             image: "/img/terre.png",
@@ -33,15 +42,6 @@ export default function Projet() {
             link: "/film",
             category: "api",
             technologies: ["React", "API", "CSS"],
-            isLocal: true,
-        },
-        {
-            title: "Sponty Trip",
-            description: "Plateforme de planification de voyages",
-            image: "/img/sponty.png",
-            link: "/spontytrip",
-            category: "voyage",
-            technologies: ["React", "API", "Tailwind CSS"],
             isLocal: true,
         },
     ];
